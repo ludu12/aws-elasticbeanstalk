@@ -13,7 +13,7 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Compiling the Node.js code
-      - mocha test.js
+      - npm run build
   post_build:
     commands:
       - echo Build completed on `date`
@@ -23,8 +23,8 @@ phases:
 # ExpressJS apps will need other artifact directories included (bin/*, public/*, routes/*, views/* etc).
 artifacts:
   files:
-    - app.js
-    - index.html
+    - src/server/index.js
     - package.json
-    - node_modules/async/*
-    - node_modules/lodash/*
+    - dist/*
+    - public/*
+    - node_modules/*
